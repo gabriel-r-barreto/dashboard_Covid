@@ -1,0 +1,81 @@
+<div class="main1" *ngIf="main1 == true">
+
+  <div class="input_cnpj">
+    <h2>consulta de cidades por estado </h2>
+    <mat-form-field class="example-form-field">
+      <mat-label>UF</mat-label>
+      <input matInput type="text" maxlength="2" [(ngModel)]="cnpj">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+      </button>
+    </mat-form-field>
+    <button mat-button color="primary" (click)="getInfo()">Pesquisar</button>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Municipio</th>
+        <th scope="col">ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dado">
+        <td>{{ row.nome }}</td>
+        <td>{{ row.id }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+<div class="main2" *ngIf="main2 == true">
+
+  <div class="input_cnpj">
+    <h2>consulte seu nome no IBGE </h2>
+    <mat-form-field class="example-form-field">
+      <mat-label>Nome</mat-label>
+      <input matInput type="text" [(ngModel)]="name">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+      </button>
+    </mat-form-field>
+    <button mat-button color="primary" (click)="getName()">Pesquisar</button>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Frequencia</th>
+        <th scope="col">Periodo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dado2">
+        <td>{{ row.frequencia }}</td>
+        <td>{{ row.periodo }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+</div>
+
+
+
+
+<div class="main3" *ngIf="main3 == true">
+
+
+
+
+
+
+</div>
+
+<div class="buttons">
+  <button mat-button color="primary" (click)="showMain1()">Consultar Cidade</button>
+  <button mat-button color="primary" (click)="showMain2()">Consultar Nome</button>
+  <button mat-button color="primary" (click)="showMain3()">Consulta</button>
+</div>
